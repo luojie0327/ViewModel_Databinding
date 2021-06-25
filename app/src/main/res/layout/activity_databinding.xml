@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        
+        <variable
+            name="user"
+            type="com.example.viewmodel_databinding.model.User" />
+
+
+        <variable
+            name="user2"
+            type="com.example.viewmodel_databinding.model.User_2" />
+
+        <variable
+            name="name"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+        <variable
+            name="age"
+            type="androidx.databinding.ObservableField&lt;String&gt;" />
+
+        <variable
+            name="viewmodle"
+            type="com.example.viewmodel_databinding.viewmodel.MyViewModel" />
+
+
+
+    </data>
+
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@{viewmodle.userMutableLiveData.name}"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/textname"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewmodle.userMutableLiveData.age}"
+            android:layout_below="@+id/textname"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textage"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击"
+            android:layout_below="@+id/textage"
+            android:id="@+id/button"
+            />
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+</layout>
